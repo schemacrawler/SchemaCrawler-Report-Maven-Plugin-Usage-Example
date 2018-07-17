@@ -1,0 +1,10 @@
+# Apache Maven build artifacts
+target/
+# Eclipse artifacts
+.project
+.classpath
+.settings/
+*.launch
+/release.properties
+/LICENSE.txt
+pom.xml.releaseBackup

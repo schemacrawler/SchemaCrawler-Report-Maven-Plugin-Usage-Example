@@ -83,7 +83,7 @@
         <plugin>
           <groupId>us.fatehi</groupId>
           <artifactId>schemacrawler-maven-plugin</artifactId>
-          <version>14.21.02</version>
+          <version>14.21.02.01</version>
           <dependencies>
             <!-- IMPORTANT: Make sure you have a dependency on the JDBC driver -->
             <dependency>

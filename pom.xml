@@ -89,7 +89,7 @@
         <plugin>
           <groupId>us.fatehi</groupId>
           <artifactId>schemacrawler-maven-plugin</artifactId>
-          <version>14.21.02.01</version>
+          <version>15.01.01</version>
           <dependencies>
             <!-- IMPORTANT: Make sure you have a dependency on the JDBC driver. 
               In this example, we are using HSQLDB as our database server. -->

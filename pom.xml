@@ -30,6 +30,12 @@
       <version>2.4.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>us.fatehi</groupId>
+      <artifactId>schemacrawler-testdb</artifactId>
+      <version>14.21.02</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -85,10 +91,8 @@
           <artifactId>schemacrawler-maven-plugin</artifactId>
           <version>14.21.02.01</version>
           <dependencies>
-            <!-- IMPORTANT: 
-							Make sure you have a dependency on the JDBC driver.
-							In this example, we are using HSQLDB as our database server.
-						-->
+            <!-- IMPORTANT: Make sure you have a dependency on the JDBC driver. 
+              In this example, we are using HSQLDB as our database server. -->
             <dependency>
               <groupId>org.hsqldb</groupId>
               <artifactId>hsqldb</artifactId>
@@ -102,34 +106,21 @@
     <plugins>
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>default-cli</id>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<target>
-                <property name="compile_classpath" refid="maven.compile.classpath"/>
-                <property name="runtime_classpath" refid="maven.runtime.classpath"/>
-                <property name="test_classpath" refid="maven.test.classpath"/>
-                <property name="plugin_classpath" refid="maven.plugin.classpath"/>
-
-                <echo message="compile classpath: ${compile_classpath}"/>
-                <echo message="runtime classpath: ${runtime_classpath}"/>
-                <echo message="test classpath:    ${test_classpath}"/>
-                <echo message="plugin classpath:  ${plugin_classpath}"/>
-								
-								<java classname="schemacrawler.testdb.TestDatabase" fork="true">
-									<classpath>
-										<path refid="maven.compile.classpath" />
-										<path refid="maven.plugin.classpath" />
-									</classpath>
-								</java>
-							</target>
-						</configuration>
-					</execution>
-				</executions>
+        <executions>
+          <execution>
+            <id>default-cli</id>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <java classname="schemacrawler.testdb.TestDatabase" fork="true">
+                  <classpath refid="maven.test.classpath" />
+                </java>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
 
       <plugin>

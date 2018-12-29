@@ -15,3 +15,4 @@ The [SchemaCrawler Report Maven Plugin](https://github.com/schemacrawler/SchemaC
 5. Create the site with the SchemaCrawler report. Run `mvn clean site`
 6. Look at the generated site in `target/site`
 7. Look at `pom.xml` in the project directory for details on how to use the [SchemaCrawler Report Maven Plugin](https://github.com/schemacrawler/SchemaCrawler-Report-Maven-Plugin) 
+

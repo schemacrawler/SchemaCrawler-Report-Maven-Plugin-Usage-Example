@@ -27,7 +27,7 @@
     <dependency>
       <groupId>us.fatehi</groupId>
       <artifactId>schemacrawler-testdb</artifactId>
-      <version>15.04.01</version>
+      <version>15.05.01</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -71,9 +71,9 @@
         <plugin>
           <groupId>us.fatehi</groupId>
           <artifactId>schemacrawler-maven-plugin</artifactId>
-          <version>15.04.01</version>
+          <version>15.05.01</version>
           <dependencies>
-            <!-- IMPORTANT: Make sure you have a dependency on the JDBC driver. 
+            <!-- IMPORTANT: Make sure you have a dependency on the JDBC driver.
               In this example, we are using HSQLDB as our database server. -->
             <dependency>
               <groupId>org.hsqldb</groupId>

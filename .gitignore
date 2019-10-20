@@ -9,3 +9,5 @@ target/
 /LICENSE.txt
 pom.xml.releaseBackup
 **/hsqldb.schemacrawler.*
+# IntelliJ
+.idea/

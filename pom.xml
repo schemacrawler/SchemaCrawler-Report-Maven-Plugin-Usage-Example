@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
@@ -21,13 +21,13 @@
     <dependency>
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
-      <version>2.5.0</version>
+      <version>2.5.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>us.fatehi</groupId>
       <artifactId>schemacrawler-testdb</artifactId>
-      <version>16.9.2</version>
+      <version>16.9.3</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -38,47 +38,47 @@
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.7.0</version>
+          <version>3.8.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.1.1</version>
+          <version>3.2.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.7.1</version>
+          <version>3.9.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-antrun-plugin</artifactId>
-          <version>1.8</version>
+          <version>3.0.0</version>
         </plugin>
 
         <plugin>
           <groupId>us.fatehi</groupId>
           <artifactId>schemacrawler-maven-plugin</artifactId>
-          <version>16.9.2</version>
+          <version>16.9.3-1</version>
           <dependencies>
             <!-- IMPORTANT: Make sure you have a dependency on the JDBC driver.
               In this example, we are using HSQLDB as our database server. -->
             <dependency>
               <groupId>org.hsqldb</groupId>
               <artifactId>hsqldb</artifactId>
-              <version>2.5.0</version>
+              <version>2.5.1</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -90,13 +90,16 @@
         <artifactId>maven-antrun-plugin</artifactId>
         <executions>
           <execution>
-            <id>default-cli</id>
+            <id>start-database</id>
+            <phase>pre-site</phase>
             <goals>
               <goal>run</goal>
             </goals>
             <configuration>
               <target>
-                <java classname="schemacrawler.testdb.TestDatabase" fork="true">
+                <java classname="schemacrawler.testdb.TestDatabase"
+                      fork="true"
+                      spawn="true">
                   <classpath refid="maven.test.classpath" />
                 </java>
               </target>

@@ -96,12 +96,15 @@
               <goal>run</goal>
             </goals>
             <configuration>
-              <target>
-                <java classname="schemacrawler.testdb.TestDatabase"
-                      fork="true"
-                      spawn="true">
-                  <classpath refid="maven.test.classpath" />
-                </java>
+              <target name="start-database">
+                <parallel>
+                  <daemons>
+                    <java classname="schemacrawler.testdb.TestDatabase"
+                          fork="true">
+                      <classpath refid="maven.test.classpath" />
+                    </java>
+                  </daemons>
+                </parallel>
               </target>
             </configuration>
           </execution>

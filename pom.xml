@@ -129,6 +129,11 @@
           <user>sa</user>
           <password></password>
           <command>schema</command>
+          <!--
+          <title>Database Schema</title>
+          <outputfile>database-schema.pdf</outputfile>
+          <outputformat>pdf</outputformat>
+          -->
         </configuration>
       </plugin>
     </plugins>

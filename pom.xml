@@ -129,11 +129,13 @@
           <user>sa</user>
           <password></password>
           <command>schema</command>
+          <infolevel>maximum</infolevel>
           <title>Database Schema</title>
           <schemas>PUBLIC.BOOKS</schemas>
           <outputfile>database-schema.pdf</outputfile>
           <outputformat>pdf</outputformat>
           <config>custom.schemacrawler.config.properties</config>
+          <loadrowcounts>true</loadrowcounts>
         </configuration>
       </plugin>
     </plugins>

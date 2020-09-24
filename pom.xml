@@ -71,8 +71,13 @@
         <plugin>
           <groupId>us.fatehi</groupId>
           <artifactId>schemacrawler-maven-plugin</artifactId>
-          <version>16.10.1.1</version>
+          <version>16.10.1.2</version>
           <dependencies>
+            <dependency>
+              <groupId>guru.nidi</groupId>
+              <artifactId>graphviz-java</artifactId>
+              <version>0.17.0</version>
+            </dependency>
             <!-- IMPORTANT: Make sure you have a dependency on the JDBC driver.
               In this example, we are using HSQLDB as our database server. -->
             <dependency>
@@ -132,10 +137,11 @@
           <infolevel>maximum</infolevel>
           <title>Database Schema</title>
           <schemas>PUBLIC.BOOKS</schemas>
-          <outputfile>database-schema.pdf</outputfile>
-          <outputformat>pdf</outputformat>
+          <outputfile>database-schema.png</outputfile>
+          <outputformat>png</outputformat>
           <config>custom.schemacrawler.config.properties</config>
           <loadrowcounts>true</loadrowcounts>
+          <loglevel>NONE</loglevel>
         </configuration>
       </plugin>
     </plugins>

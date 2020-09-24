@@ -73,6 +73,8 @@
           <artifactId>schemacrawler-maven-plugin</artifactId>
           <version>16.10.1.2</version>
           <dependencies>
+            <!-- If you do not have Graphviz installed, 
+              provide a dependency on graphviz-java -->
             <dependency>
               <groupId>guru.nidi</groupId>
               <artifactId>graphviz-java</artifactId>

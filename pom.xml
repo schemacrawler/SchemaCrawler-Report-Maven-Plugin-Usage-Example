@@ -27,7 +27,7 @@
     <dependency>
       <groupId>us.fatehi</groupId>
       <artifactId>schemacrawler-testdb</artifactId>
-      <version>16.11.3</version>
+      <version>16.11.5</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -71,7 +71,7 @@
         <plugin>
           <groupId>us.fatehi</groupId>
           <artifactId>schemacrawler-maven-plugin</artifactId>
-          <version>16.11.3.2</version>
+          <version>16.11.5.2</version>
           <dependencies>
             <!-- If you do not have Graphviz installed, 
               provide a dependency on graphviz-java -->

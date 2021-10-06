@@ -17,21 +17,6 @@
     <maven.compiler.target>8</maven.compiler.target>
   </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.hsqldb</groupId>
-      <artifactId>hsqldb</artifactId>
-      <version>2.5.2</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>us.fatehi</groupId>
-      <artifactId>schemacrawler-testdb</artifactId>
-      <version>16.15.8</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
   <build>
 
     <pluginManagement>
@@ -78,14 +63,21 @@
             <dependency>
               <groupId>guru.nidi</groupId>
               <artifactId>graphviz-java</artifactId>
-              <version>0.17.0</version>
+              <version>0.18.1</version>
             </dependency>
             <!-- IMPORTANT: Make sure you have a dependency on the JDBC driver.
-              In this example, we are using HSQLDB as our database server. -->
+              In this example, we are using SQLite as our database server. -->
             <dependency>
-              <groupId>org.hsqldb</groupId>
-              <artifactId>hsqldb</artifactId>
-              <version>2.5.2</version>
+              <groupId>org.xerial</groupId>
+              <artifactId>sqlite-jdbc</artifactId>
+              <version>3.36.0.3</version>
+            </dependency>
+            <!-- IMPORTANT: Make sure you have a dependency on the SchemaCrawler plugin.
+              In this example, we are using SQLite as our database server. -->
+            <dependency>
+              <groupId>us.fatehi</groupId>
+              <artifactId>schemacrawler-sqlite</artifactId>
+              <version>16.15.8</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -93,31 +85,6 @@
     </pluginManagement>
 
     <plugins>
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>start-database</id>
-            <phase>pre-site</phase>
-            <goals>
-              <goal>run</goal>
-            </goals>
-            <configuration>
-              <target name="start-database">
-                <parallel>
-                  <daemons>
-                    <java classname="schemacrawler.testdb.TestDatabase"
-                          fork="true">
-                      <classpath refid="maven.test.classpath" />
-                    </java>
-                  </daemons>
-                </parallel>
-              </target>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
       <plugin>
         <groupId>us.fatehi</groupId>
         <artifactId>schemacrawler-maven-plugin</artifactId>
@@ -132,13 +99,13 @@
         <groupId>us.fatehi</groupId>
         <artifactId>schemacrawler-maven-plugin</artifactId>
         <configuration>
-          <url>jdbc:hsqldb:hsql://localhost/schemacrawler</url>
+          <url>jdbc:sqlite:sc.db</url>
           <user>sa</user>
           <password></password>
           <command>schema</command>
           <infolevel>maximum</infolevel>
           <title>Database Schema</title>
-          <schemas>PUBLIC.BOOKS</schemas>
+          <!-- <schemas>PUBLIC.BOOKS</schemas> -->
           <outputfile>database-schema.png</outputfile>
           <outputformat>png</outputformat>
           <config>custom.schemacrawler.config.properties</config>

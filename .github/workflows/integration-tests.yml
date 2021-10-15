@@ -1,11 +1,17 @@
-name: Quick Build
+name: Integration tests
 
 on: push
 
 jobs:
   build:
-    name: Quick build
+    name: Integration tests    
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        java: [8, 17]
+    steps:
     steps:
 
 # SETUP BUILD ENVIRONMENT
@@ -28,5 +34,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         path: ./target/site
-        name: generated-site
+        name: generated-site-java${{ matrix.java }}-${{ matrix.os }}
         retention-days: 5

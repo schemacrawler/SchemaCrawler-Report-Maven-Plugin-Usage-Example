@@ -14,7 +14,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         java: [8, 17]
-    runs-on: ${{ matrix.os }}  
+    runs-on: ${{ matrix.os }}
     steps:
 
 # SETUP BUILD ENVIRONMENT
@@ -25,6 +25,7 @@ jobs:
 # BUILD AND TEST
     - id: build-test
       name: Build and run tests
+      shell: bash
       run: |
         mvn \
           --no-transfer-progress \

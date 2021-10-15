@@ -20,4 +20,21 @@ jobs:
         mvn \
           --no-transfer-progress \
           --batch-mode \
-          package
+          site
+
+# TAR SITE
+    - id: tar-site
+      name: Tar generated site
+      shell: bash
+      run: |
+        # Tar generated site
+        tar -cvf ./generated-site.tar ./target/site
+
+# UPLOAD GENERATED SITE
+    - id: upload-generated-site
+      name: Upload generated site with SchemaCrawler report
+      uses: actions/upload-artifact@v2
+      with:
+        path: ./generated-site.tar
+        name: generated-site
+        retention-days: 5

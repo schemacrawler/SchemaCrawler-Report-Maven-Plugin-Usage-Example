@@ -56,13 +56,13 @@
         <plugin>
           <groupId>us.fatehi</groupId>
           <artifactId>schemacrawler-maven-plugin</artifactId>
-          <version>16.15.8.2</version>
+          <version>16.15.8.3</version>
           <dependencies>
             <!-- If you do not have Graphviz installed, 
               provide a dependency on graphviz-java -->
             <dependency>
               <groupId>guru.nidi</groupId>
-              <artifactId>graphviz-java</artifactId>
+              <artifactId>graphviz-java-all-j2v8</artifactId>
               <version>0.18.1</version>
             </dependency>
             <!-- IMPORTANT: Make sure you have a dependency on the JDBC driver.

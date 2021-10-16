@@ -1,0 +1,44 @@
+name: Integration tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    name: Build, run integration tests, and publish results
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        java: [8, 17]
+    runs-on: ${{ matrix.os }}
+    steps:
+
+# SETUP BUILD ENVIRONMENT
+    - id: prepare-maven-build
+      name: Prepare Maven build
+      uses: sualeh/prepare-maven-build@v1.1.1
+      with:
+        java-version: ${{ matrix.java }}
+
+# BUILD AND TEST
+    - id: build-test
+      name: Build and run tests
+      shell: bash
+      run: |
+        mvn \
+          --no-transfer-progress \
+          --batch-mode \
+          site
+
+# UPLOAD GENERATED SITE
+    - id: upload-generated-site
+      name: Upload generated site with SchemaCrawler report
+      uses: actions/upload-artifact@v2
+      with:
+        path: ./target/site
+        name: generated-site-java${{ matrix.java }}-${{ matrix.os }}
+        retention-days: 5

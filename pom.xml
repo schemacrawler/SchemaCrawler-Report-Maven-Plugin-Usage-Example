@@ -2,7 +2,7 @@
 
 <project xmlns="https://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
@@ -31,11 +31,11 @@
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.1</version>
+          <version>3.9.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.2.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -56,7 +56,7 @@
         <plugin>
           <groupId>us.fatehi</groupId>
           <artifactId>schemacrawler-maven-plugin</artifactId>
-          <version>16.16.8.1</version>
+          <version>16.16.12.1</version>
           <dependencies>
             <!-- If you do not have Graphviz installed, provide a dependency
               on graphviz-java -->
@@ -68,7 +68,7 @@
             <dependency>
               <groupId>org.graalvm.js</groupId>
               <artifactId>js</artifactId>
-              <version>21.3.0</version>
+              <version>22.0.0.2</version>
             </dependency>
             <!-- IMPORTANT: Make sure you have a dependency on the JDBC driver.
               In this example, we are using SQLite as our database server. -->
@@ -82,7 +82,7 @@
             <dependency>
               <groupId>us.fatehi</groupId>
               <artifactId>schemacrawler-sqlite</artifactId>
-              <version>16.16.8</version>
+              <version>16.16.12</version>
             </dependency>
           </dependencies>
         </plugin>

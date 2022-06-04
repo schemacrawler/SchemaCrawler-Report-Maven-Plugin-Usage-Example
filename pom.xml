@@ -50,13 +50,13 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-antrun-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.1.0</version>
         </plugin>
 
         <plugin>
           <groupId>us.fatehi</groupId>
           <artifactId>schemacrawler-maven-plugin</artifactId>
-          <version>16.16.14.1</version>
+          <version>16.16.15.1</version>
           <dependencies>
             <!-- If you do not have Graphviz installed, provide a dependency
               on graphviz-java -->
@@ -68,7 +68,7 @@
             <dependency>
               <groupId>org.graalvm.js</groupId>
               <artifactId>js</artifactId>
-              <version>22.0.0.2</version>
+              <version>22.1.0</version>
             </dependency>
             <!-- IMPORTANT: Make sure you have a dependency on the JDBC driver.
               In this example, we are using SQLite as our database server. -->
@@ -82,7 +82,7 @@
             <dependency>
               <groupId>us.fatehi</groupId>
               <artifactId>schemacrawler-sqlite</artifactId>
-              <version>16.16.14</version>
+              <version>16.16.15</version>
             </dependency>
           </dependencies>
         </plugin>

@@ -2,7 +2,7 @@
 
 # SchemaCrawler Report Maven Plugin - Usage Example
 
-> **Please see the [SchemaCrawler website](https://www.schemacrawler.com/) for more details.**
+> **Note**: Please see the [SchemaCrawler website](https://www.schemacrawler.com/) for more details.
 
 The [SchemaCrawler Report Maven Plugin](https://github.com/schemacrawler/SchemaCrawler-Report-Maven-Plugin) allows you to integrate a SchemaCrawler report of your database within the Maven-generated website for your project. Use this project to see how to use the SchemaCrawler Report Maven Plugin.
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="https://maven.apache.org/POM/4.0.0"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -22,18 +22,22 @@
     <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.2.0</version>
         </plugin>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.10.1</version>
         </plugin>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.3.0</version>
         </plugin>
@@ -45,7 +49,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.10</version>
+          <version>3.12.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -56,10 +60,11 @@
         <plugin>
           <groupId>us.fatehi</groupId>
           <artifactId>schemacrawler-maven-plugin</artifactId>
-          <version>16.19.9.1</version>
+          <version>16.19.9.2</version>
           <dependencies>
             <!-- If you do not have Graphviz installed, provide a dependency
-              on graphviz-java -->
+              on
+            graphviz-java -->
             <dependency>
               <groupId>guru.nidi</groupId>
               <artifactId>graphviz-java</artifactId>
@@ -71,14 +76,14 @@
               <version>22.1.0</version>
             </dependency>
             <!-- IMPORTANT: Make sure you have a dependency on the JDBC driver.
-              In this example, we are using SQLite as our database server. -->
+            In this example, we are using SQLite as our database server. -->
             <dependency>
               <groupId>org.xerial</groupId>
               <artifactId>sqlite-jdbc</artifactId>
               <version>3.41.0.1</version>
             </dependency>
             <!-- IMPORTANT: Make sure you have a dependency on the SchemaCrawler
-              plugin. In this example, we are using SQLite as our database server. -->
+            plugin. In this example, we are using SQLite as our database server. -->
             <dependency>
               <groupId>us.fatehi</groupId>
               <artifactId>schemacrawler-sqlite</artifactId>

@@ -39,7 +39,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.4.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -60,7 +60,7 @@
         <plugin>
           <groupId>us.fatehi</groupId>
           <artifactId>schemacrawler-maven-plugin</artifactId>
-          <version>16.21.1.2</version>
+          <version>16.22.2.2</version>
           <dependencies>
             <!-- If you do not have Graphviz installed, provide a dependency
               on
@@ -80,14 +80,14 @@
             <dependency>
               <groupId>org.xerial</groupId>
               <artifactId>sqlite-jdbc</artifactId>
-              <version>3.44.1.0</version>
+              <version>3.46.0.1</version>
             </dependency>
             <!-- IMPORTANT: Make sure you have a dependency on the SchemaCrawler
             plugin. In this example, we are using SQLite as our database server. -->
             <dependency>
               <groupId>us.fatehi</groupId>
               <artifactId>schemacrawler-sqlite</artifactId>
-              <version>16.21.1</version>
+              <version>16.22.2</version>
             </dependency>
           </dependencies>
         </plugin>
